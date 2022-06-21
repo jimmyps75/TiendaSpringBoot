@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StoreRepository extends JpaRepository<Store, Long> {
 //aquui implementa lo que viende de la libreria
+    //busqueda automaticamente la busqueda
+    Store findByName(String name);
 }
