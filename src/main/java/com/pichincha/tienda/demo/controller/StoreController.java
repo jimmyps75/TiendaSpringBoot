@@ -6,10 +6,8 @@ import com.pichincha.tienda.demo.dto.ResponseDto;
 import com.pichincha.tienda.demo.dto.StoreDto;
 import com.pichincha.tienda.demo.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -48,4 +46,16 @@ public class StoreController {
             return new ResponseEntity<>( HttpStatus.NOT_MODIFIED);
         }
     }
+
+    //elimina  sin productos
+    @DeleteMapping(path = "/{storeId}")
+    public  ResponseEntity<?> deleteStoreId(@PathVariable Long storeId)
+    {
+        try {
+            return new ResponseEntity<ResponseDto>(storeService.deleteStore(storeId), HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>( HttpStatus.NOT_MODIFIED);
+        }
+    }
+
 }

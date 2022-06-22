@@ -10,6 +10,8 @@ public interface StoreService {
 
     StoreDto findStoreByName(String storeName) throws StoreNotFoundException;
 
+    ResponseDto deleteStore(Long storedId) throws StoreNotFoundException;
+
     Boolean updateStore(StoreDto  storeDto, Long storeId) throws StoreNotFoundException;
 }
 
