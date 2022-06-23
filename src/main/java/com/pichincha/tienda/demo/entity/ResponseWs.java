@@ -5,14 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductWs {
-    private Long id;
-    private String cod;
-    private String name;
-    private Double price;
-    private Integer stock;
+public class ResponseWs {
+    private List<ProductWs> products;
 }
